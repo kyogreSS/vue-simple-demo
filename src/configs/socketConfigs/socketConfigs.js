@@ -4,8 +4,8 @@ socket.url = process.env.SOCKET || ''
 
 
 socket.options = {}
-socket.options.path = '/v1/market'  //请求路径
-socket.options.transports = ['websocket'] //请求
+socket.options.path = ''  //请求路径
+socket.options.transports = [] //请求
 
 
 socket.options.reconnection = true //是否自动重新连接

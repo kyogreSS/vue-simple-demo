@@ -27,7 +27,7 @@ root.watch = {}
 /*------------------------------- 生命周期 -------------------------------*/
 root.created = function () {
   this.testNetwork()
-
+  this.testSocket()
 }
 
 root.mounted = function () {
@@ -53,8 +53,20 @@ root.methods.testNetwork = function () {
   })
 }
 
-root.methods.testEventBus = function(){
-  this.$eventBus.notify({key:'TEST'},'123')
+root.methods.testEventBus = function () {
+  this.$eventBus.notify({key: 'TEST'}, '123')
+}
+
+root.methods.testSocket = function () {
+  // 接收所有币对实时价格
+  // 订阅某个币对的信息
+  this.$socket.on({
+    key: 'KEY',
+    bind: this,
+    callBack: (message) => {
+      console.warn('socket', message)
+    }
+  })
 }
 
 
