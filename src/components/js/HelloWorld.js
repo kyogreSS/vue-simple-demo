@@ -26,7 +26,7 @@ root.watch = {}
 
 /*------------------------------- 生命周期 -------------------------------*/
 root.created = function () {
-
+  this.testNetwork()
 }
 
 root.mounted = function () {
@@ -39,6 +39,18 @@ root.beforeDestroy = function () {
 
 /*------------------------------- 方法 -------------------------------*/
 root.methods = {}
+
+root.methods.testNetwork = function () {
+  this.$http.send('TEST_RUL', {
+    bind: this,
+    callBack: (data) => {
+      console.warn('data', data)
+    },
+    errorHandler: (err) => {
+      console.warn('err', err)
+    }
+  })
+}
 
 
 export default root
