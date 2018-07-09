@@ -13,12 +13,15 @@ import Network from 'vue-network-use-axios'
 import address from './configs/networkConfigs/address'
 import networkConfigs from './configs/networkConfigs/networkConfigs'
 
+import EventBus from 'vue-event-bus-use-map'
+
 
 Vue.config.productionTip = false
 
 Vue.use(Router)
 Vue.use(Vuex)
 Vue.use(Network, {address, networkConfigs})
+Vue.use(EventBus)
 
 
 const router = new Router(RouterConfigs)

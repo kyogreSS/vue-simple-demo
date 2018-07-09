@@ -27,6 +27,7 @@ root.watch = {}
 /*------------------------------- 生命周期 -------------------------------*/
 root.created = function () {
   this.testNetwork()
+
 }
 
 root.mounted = function () {
@@ -50,6 +51,10 @@ root.methods.testNetwork = function () {
       console.warn('err', err)
     }
   })
+}
+
+root.methods.testEventBus = function(){
+  this.$eventBus.notify({key:'TEST'},'123')
 }
 
 

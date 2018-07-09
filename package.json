@@ -15,9 +15,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "vue": "^2.5.2",
+    "vue-event-bus-use-map": "^1.0.0",
+    "vue-network-use-axios": "^1.0.3",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "vue-network-use-axios": "^1.0.3"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

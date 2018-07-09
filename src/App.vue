@@ -6,7 +6,12 @@
 
 <script>
   export default {
-    name: 'App'
+    name: 'App',
+    created: function () {
+      this.$eventBus.listen(this, 'TEST', (info) => {
+        console.warn('测试eventBus', info)
+      })
+    }
   }
 </script>
 
