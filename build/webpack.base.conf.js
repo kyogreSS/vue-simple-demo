@@ -46,8 +46,10 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           vueLoaderConfig,
-          loaders: {
-            'i18n': '@kazupon/vue-i18n-loader'
+          vueI18nConfig: {
+            loaders: {
+              'i18n': '@kazupon/vue-i18n-loader'
+            }
           }
         }
       },

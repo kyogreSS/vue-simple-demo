@@ -69,5 +69,9 @@ root.methods.testSocket = function () {
   })
 }
 
+root.methods.changeLanguage = function(){
+  this.$i18n.locale === 'en' ? this.$i18n.locale = 'ch' : this.$i18n.locale = 'en'
+}
+
 
 export default root
