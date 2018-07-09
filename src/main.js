@@ -14,6 +14,8 @@ import address from './configs/networkConfigs/address'
 import networkConfigs from './configs/networkConfigs/networkConfigs'
 
 import EventBus from 'vue-event-bus-use-map'
+import Socket from 'vue-socket-use-socket-io'
+import socketConfigs from './configs/socketConfigs/socketConfigs'
 
 
 Vue.config.productionTip = false
@@ -22,13 +24,14 @@ Vue.use(Router)
 Vue.use(Vuex)
 Vue.use(Network, {address, networkConfigs})
 Vue.use(EventBus)
+Vue.use(Socket, {url: socketConfigs.url, options: socketConfigs.options})
 
 
 const router = new Router(RouterConfigs)
 const store = new Vuex.Store(StoreConfigs)
 
 
-NetworkInterceptors(Vue.$http.getAxios())
+NetworkInterceptors(Vue.$http.getAxios(), Vue.$http)
 
 
 // 异步加载，等待预先处理结束再挂载组件
