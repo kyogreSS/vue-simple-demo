@@ -2,14 +2,27 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import preHandler from './configs/preHandler/preHandler'
+import Router from "vue-router"
+import routerConfigs from './configs/routerConfigs/routerConfigs'
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+Vue.use(Router)
+
+
+let router = new Router(routerConfigs)
+
+
+// 异步加载，等待预先处理结束再挂载组件
+async function mountApp() {
+  await preHandler()
+  new Vue({
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: {App}
+  })
+}
+
+mountApp()
