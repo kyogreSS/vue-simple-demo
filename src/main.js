@@ -17,6 +17,10 @@ import EventBus from 'vue-event-bus-use-map'
 import Socket from 'vue-socket-use-socket-io'
 import socketConfigs from './configs/socketConfigs/socketConfigs'
 
+import VueI18n from 'vue-i18n'
+
+import languageConfigs from './configs/languageConfigs/languageConfigs'
+
 
 Vue.config.productionTip = false
 
@@ -25,10 +29,12 @@ Vue.use(Vuex)
 Vue.use(Network, {address, networkConfigs})
 Vue.use(EventBus)
 Vue.use(Socket, {url: socketConfigs.url, options: socketConfigs.options})
+Vue.use(VueI18n)
 
 
 const router = new Router(RouterConfigs)
 const store = new Vuex.Store(StoreConfigs)
+const i18n = new VueI18n(languageConfigs)
 
 
 NetworkInterceptors(Vue.$http.getAxios(), Vue.$http)
@@ -40,6 +46,7 @@ async function mountApp() {
   new Vue({
     el: '#app',
     router,
+    i18n,
     store,
     template: '<App/>',
     components: {App}
