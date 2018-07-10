@@ -5,23 +5,6 @@
   </div>
 </template>
 
-
-<i18n>
-  {
-  "en": {
-  "hello": "hello world!"
-  }
-  }
-</i18n>
-<i18n>
-  {
-  "ch": {
-  "hello": "こんにちは、世界!"
-  }
-  }
-</i18n>
-
-
 <script>
   export default {
     name: 'App',
