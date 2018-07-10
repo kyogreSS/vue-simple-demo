@@ -16,6 +16,7 @@ import networkConfigs from './configs/networkConfigs/networkConfigs'
 import EventBus from 'vue-event-bus-use-map'
 import Socket from 'vue-socket-use-socket-io'
 import socketConfigs from './configs/socketConfigs/socketConfigs'
+import languageConfigs from './configs/languageConfigs/languageConfigs'
 
 import VueI18n from 'vue-i18n'
 
@@ -32,7 +33,7 @@ Vue.use(VueI18n)
 
 const router = new Router(RouterConfigs)
 const store = new Vuex.Store(StoreConfigs)
-const i18n = new VueI18n({locale: 'en', messages: {'en': {}}})
+const i18n = new VueI18n(languageConfigs)
 
 
 NetworkInterceptors(Vue.$http.getAxios(), Vue.$http)

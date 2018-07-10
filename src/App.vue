@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <span>messages:{{$t('hello')}}</span>
     <router-view/>
   </div>
 </template>
