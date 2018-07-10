@@ -19,8 +19,6 @@ import socketConfigs from './configs/socketConfigs/socketConfigs'
 
 import VueI18n from 'vue-i18n'
 
-import languageConfigs from './configs/languageConfigs/languageConfigs'
-
 
 Vue.config.productionTip = false
 
@@ -34,7 +32,7 @@ Vue.use(VueI18n)
 
 const router = new Router(RouterConfigs)
 const store = new Vuex.Store(StoreConfigs)
-const i18n = new VueI18n(languageConfigs)
+const i18n = new VueI18n({locale: 'en', messages: {'en': {}}})
 
 
 NetworkInterceptors(Vue.$http.getAxios(), Vue.$http)

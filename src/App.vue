@@ -1,12 +1,24 @@
 <template>
   <div id="app">
+    <span>messages:{{$t('hello')}}</span>
     <router-view/>
   </div>
 </template>
 
 
 <i18n>
-
+  {
+  "en": {
+  "hello": "hello world!"
+  }
+  }
+</i18n>
+<i18n>
+  {
+  "ch": {
+  "hello": "こんにちは、世界!"
+  }
+  }
 </i18n>
 
 
@@ -17,6 +29,7 @@
       this.$eventBus.listen(this, 'TEST', (info) => {
         console.warn('测试eventBus', info)
       })
+      console.warn('this is i18n ', this.$t)
     }
   }
 </script>
