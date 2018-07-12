@@ -17,8 +17,9 @@ import EventBus from 'vue-event-bus-use-map'
 import Socket from 'vue-socket-use-socket-io'
 import socketConfigs from './configs/socketConfigs/socketConfigs'
 import languageConfigs from './configs/languageConfigs/languageConfigs'
-
+import Global from 'vue-global-function'
 import VueI18n from 'vue-i18n'
+import globalFunctionConfigs from './configs/globalFunctionConfigs/globalFunctionConfigs'
 
 
 Vue.config.productionTip = false
@@ -29,6 +30,7 @@ Vue.use(Network, {address, networkConfigs})
 Vue.use(EventBus)
 Vue.use(Socket, {url: socketConfigs.url, options: socketConfigs.options})
 Vue.use(VueI18n)
+Vue.use(Global, globalFunctionConfigs)
 
 
 const router = new Router(RouterConfigs)

@@ -73,5 +73,9 @@ root.methods.testChangeLang = function () {
   this.$i18n.locale = this.$i18n.locale === 'ch' ? 'en' : 'ch'
 }
 
+root.methods.testGlobalFunc = function () {
+  this.$globalFunc.testFunc()
+}
+
 
 export default root
