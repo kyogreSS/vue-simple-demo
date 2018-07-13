@@ -42,14 +42,10 @@ root.beforeDestroy = function () {
 root.methods = {}
 
 root.methods.testNetwork = function () {
-  this.$http.send('TEST_RUL', {
-    bind: this,
-    callBack: (data) => {
-      console.warn('data', data)
-    },
-    errorHandler: (err) => {
-      console.warn('err', err)
-    }
+  this.$http.send('TEST_RUL').then((res) => {
+
+  }).catch((err) => {
+
   })
 }
 
