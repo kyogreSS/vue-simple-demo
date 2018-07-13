@@ -11,7 +11,8 @@ root.components = {
 
 root.data = function () {
   return {
-    msg: 'Welcome to Your Vue.js App'
+    msg: 'Welcome to Your Vue.js App',
+    locale: 'en'
   }
 }
 
@@ -22,6 +23,9 @@ root.computed = {}
 
 /*------------------------------- 观察 -------------------------------*/
 root.watch = {}
+root.watch.locale = function (val) {
+  this.$i18n.locale = val
+}
 
 
 /*------------------------------- 生命周期 -------------------------------*/
@@ -69,7 +73,7 @@ root.methods.testSocket = function () {
   })
 }
 
-root.methods.changeLanguage = function(){
+root.methods.changeLanguage = function () {
   this.$i18n.locale === 'en' ? this.$i18n.locale = 'ch' : this.$i18n.locale = 'en'
 }
 
