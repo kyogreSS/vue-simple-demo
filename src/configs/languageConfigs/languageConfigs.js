@@ -4,6 +4,7 @@ import ch from './ch'
 const i18n = {}
 
 i18n.locale = 'en'
+i18n.fallbackLocale = 'en'
 
 i18n.messages = {}
 
