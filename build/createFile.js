@@ -25,7 +25,7 @@ let filePath = [{
     path: basePath + '/js',
     postfix: 'js',
     content: function(content) {
-      return `const root = {}\nroot.name = ${content}\nexport default root`
+      return `const root = {}\nroot.name = '${content}'\nexport default root`
     }
   },
   {

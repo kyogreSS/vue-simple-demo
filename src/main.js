@@ -41,6 +41,24 @@ const i18n = new VueI18n(languageConfigs)
 NetworkInterceptors(Vue.$http.getAxios(), Vue.$http)
 
 
+
+if (process.env.NODE_ENV == 'production') {
+  window.console.log = () => {
+
+  }
+  window.console.warn = () => {
+
+  }
+  window.console.error = () => {
+
+  }
+  window.console.debug = () => {
+
+  }
+}
+
+
+
 // 异步加载，等待预先处理结束再挂载组件
 async function mountApp() {
   await preHandler()
