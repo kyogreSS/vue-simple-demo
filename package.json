@@ -11,7 +11,8 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "create": "node build/createFile.js"
+    "create": "node build/createTemplateFile.js",
+    "moveFile": "node build/moveFile.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

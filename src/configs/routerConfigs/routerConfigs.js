@@ -9,7 +9,7 @@ root.routes = []
 root.routes.push({
   path: '/',
   name: 'HelloWorld',
-  component: resolve => require(['@/components/vue/HelloWorld'], resolve)
+  component: resolve => require(['@/components/HelloWorld/HelloWorld.vue'], resolve)
 })
 
 
